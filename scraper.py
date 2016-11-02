@@ -1,13 +1,12 @@
 from bs4 import BeautifulSoup
+from demo import tag
 import requests
 
-result = requests.get('http://www.goodreads.com/quotes/tag/piano')
+result = requests.get('http://www.goodreads.com/quotes/tag/' + tag)
 c = result.content
 
 soup = BeautifulSoup(c, 'html.parser')
-
 samples = soup.find_all("div", "quoteText")
-
 text = samples[0].get_text()
 
 # super hacky way of parsing result lol!
