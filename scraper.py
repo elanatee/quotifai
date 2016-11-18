@@ -1,22 +1,23 @@
 from bs4 import BeautifulSoup
-from demo import tag
 import requests
 
-result = requests.get('http://www.goodreads.com/quotes/tag/' + tag)
-c = result.content
+def scrape(tag):
 
-soup = BeautifulSoup(c, 'html.parser')
+    result = requests.get('http://www.goodreads.com/quotes/tag/' + tag)
+    c = result.content
 
-samples = soup.find_all("div", "quoteText")
+    soup = BeautifulSoup(c, 'html.parser')
 
-text = samples[0].get_text()
+    samples = soup.find_all("div", "quoteText")
 
-# super hacky way of parsing result lol!
-quote = ' '
-for char in text:
-    if char != '/':
-        quote += char
-    else:
-        break
+    text = samples[0].get_text()
 
-# print quote
+    # super hacky way of parsing result lol!
+    quote = ' '
+    for char in text:
+        if char != '/':
+            quote += char
+        else:
+            break
+
+    return quote
