@@ -14,7 +14,7 @@ def home():
     )
 
 @app.route('/quote', methods=['POST'])
-def next():
+def getQuote():
     if request.method == 'POST':
         url = request.form['address']
         validURL = validators.url(url)
@@ -26,7 +26,7 @@ def next():
                 'quote.html', 
                 quote=quote
             )
-            
+
         return render_template(
             'error.html'
         )

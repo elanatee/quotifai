@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clarifai quotes</title>
+    <title>quotifai</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}" />
 </head>
 
 <body>
     <h1>{{ quote }}</h1>
+    <form action='/'>
+        <input type='submit' value='back home'>
+    </form>
 </body>

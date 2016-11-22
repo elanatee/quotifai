@@ -1,5 +1,22 @@
 body {
-    padding: 20%;
-    font-family: Arial;
+    background-color: #1f2933;
+    color: white;
+    padding: 15%;
+    font-family: 'Helvetica Neue';
     text-align: center;
+}
+
+span.ai {
+    color: #0096ff;
+}
+
+a {
+    color: white;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }

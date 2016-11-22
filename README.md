@@ -1,4 +1,8 @@
-# clarifai-demo
+# quotifai
+
+> a web app that displays a quote related to a submitted image
+
+<img src='static/quotifai.png'>
 
 ### things I learned how to use:
 - [Clarifai API](https://github.com/Clarifai/clarifai-python)
