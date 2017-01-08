@@ -1,10 +1,9 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-from quotifai import app
+from flask import Flask, render_template, request
 import validators
 import scraper
 import demo
+
+app = Flask(__name__)
 
 @app.route('/')
 @app.route('/home')
@@ -23,10 +22,12 @@ def getQuote():
             tag = demo.getTag(url)
             quote = scraper.scrape(tag)
             return render_template(
-                'quote.html', 
+                'quote.html',
+                # tag=tag,
                 quote=quote
             )
 
-        return render_template(
-            'error.html'
-        )
+        else:
+            return render_template(
+                'error.html'
+            )
