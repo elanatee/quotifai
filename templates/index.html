@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quotifai</title>
+    <title>quotifai | image recognition + web scraping</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='content/main.css') }}" />
     <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css" >
 </head>
 
-<body>
-    <h1>welcome to quotif<span class='ai'>ai</span>!</h1>
+<body class="home">
+    <h1>welcome to quotif<span class="blue">ai</span>!</h1>
     <h2>enter an image address:</h2>
 
     <form action="" method="post" name="image">
         {{ form.hidden_tag() }}
-        {{ form.image_url(size=30) }}
+        {{ form.url(size=30) }}
         <input type="submit" value="submit">
     </form>
 </body>

@@ -1,12 +1,19 @@
 body {
     background-color: #1f2933;
     color: white;
-    padding: 15%;
     font-family: 'Helvetica Neue';
     text-align: center;
 }
 
-span.ai {
+body.home, body.error {
+    padding: 15%;
+}
+
+body.quote {
+    padding: 10%;
+}
+
+span.blue {
     color: #0096ff;
 }
 

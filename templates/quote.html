@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quotifai</title>
+    <title>quotifai | image recognition + web scraping</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='content/main.css') }}" />
 </head>
 
-<body>
-    <h1>{{ tag }}</h1>
+<body class="quote">
+    <h2>your image was tagged as <span class="blue">{{ tag }}</span></h2>
     <h1>{{ quote }}</h1>
-    
+    <a href="{{ url_for('getQuote', url=url, tag_index=tag_index) }}">next tag</a>
     <a href="/">back home</a>
 </body>

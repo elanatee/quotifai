@@ -5,7 +5,7 @@ from clarifai.rest import ClarifaiApp
 app = ClarifaiApp()
 model = app.models.get('general-v1.3')
 
-def getTag(url):
+def getTag(url, index):
     tags = []
     url = url
 
@@ -15,6 +15,7 @@ def getTag(url):
     for each in result:
         tag = each['name']
         tags.append(str(tag))
-    
-    tag = tags[0]
-    return tag
+    print 'found ' + str(len(tags)) + ' tags'
+
+    tag = tags[index]
+    return tags, tag
