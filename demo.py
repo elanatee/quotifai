@@ -1,20 +1,20 @@
 from clarifai.rest import ClarifaiApp
 
-taglist = []
+# tags = []
 
 app = ClarifaiApp()
 model = app.models.get('general-v1.3')
 
 def getTag(url):
-
+    tags = []
     url = url
 
     result = model.predict_by_url(url)
-    tags = result['outputs'][0]['data']['concepts']
+    result = result['outputs'][0]['data']['concepts']
 
-    for each in tags:
+    for each in result:
         tag = each['name']
-        taglist.append(str(tag))
-
-    tag = taglist[0]
+        tags.append(str(tag))
+    
+    tag = tags[0]
     return tag

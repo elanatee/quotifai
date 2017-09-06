@@ -11,9 +11,11 @@
 <body>
     <h1>welcome to quotif<span class='ai'>ai</span>!</h1>
     <h2>enter an image address:</h2>
-    <form action='/quote' method='POST'>
-        <input type='text' name='address'>
-        <input type='submit' value='submit'>
+
+    <form action="" method="post" name="image">
+        {{ form.hidden_tag() }}
+        {{ form.image_url(size=30) }}
+        <input type="submit" value="submit">
     </form>
 </body>
 
