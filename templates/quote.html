@@ -10,6 +10,6 @@
 <body class="quote">
     <h2>your image was tagged as <span class="blue">{{ tag }}</span></h2>
     <h1>{{ quote }}</h1>
-    <a href="{{ url_for('getQuote', url=url, tag_index=tag_index) }}">next tag</a>
-    <a href="/">back home</a>
+    <a href="{{ url_for('getQuote', url=url, tag_index=tag_index) }}" class="next">next tag</a>
+    <a href="/" class="back">back home</a>
 </body>

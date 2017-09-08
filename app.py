@@ -14,7 +14,7 @@ class ImageForm(FlaskForm):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    form = ImageForm()      
+    form = ImageForm()
     if form.validate_on_submit():
         return redirect(url_for('getQuote', 
             url=form.url.data)
@@ -39,13 +39,14 @@ def getQuote():
             
         else: # otherwise start w/ the first tag
             tag_index = 0 
-            tags, tag = demo.getTag(url, tag_index)
+            tags = demo.getTag(url)
+            tag = tags[tag_index]
             session['tags'] = tags
 
-        if 'tags' in session: # if list of tags in session 
+        if 'tags' in session: # if list of tags is saved
             tags = session['tags']
 
-        while quote == None: # find tags that give quote results
+        while quote == None: # find only tags that give quote results
             if tag_index == 20: # reset to first tag when at end of list
                 tag_index = 0
             tag = tags[tag_index]
@@ -57,7 +58,7 @@ def getQuote():
             url=url,
             tag=tag,
             quote=quote,
-            tag_index=tag_index
+            tag_index=tag_index 
         )
 
     else:
@@ -66,6 +67,3 @@ def getQuote():
         )
 
 app.secret_key = secret_key
-
-# TO DO: 
-# get next quote for same tag

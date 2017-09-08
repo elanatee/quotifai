@@ -2,6 +2,16 @@ from bs4 import BeautifulSoup
 import requests
 
 def scrape(tag):
+    '''
+    parameters:
+    -----------
+        tag : str
+            a tag to find quotes for
+    returns:
+    --------
+        quote : str
+            a quote found from goodreads.com
+    '''
     tag = tag.replace(' ', '+') 
     result = requests.get('http://www.goodreads.com/quotes/tag/' + tag)
     c = result.content

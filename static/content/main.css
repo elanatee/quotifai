@@ -5,7 +5,7 @@ body {
     text-align: center;
 }
 
-body.home, body.error {
+div.welcome, body.error {
     padding: 15%;
 }
 
@@ -19,6 +19,14 @@ span.blue {
 
 a {
     color: white;
+}
+
+a.next, a.back {
+    padding: 0.5%;
+}
+
+a.next:hover, a.back:hover {
+    background-color: #0096ff;   
 }
 
 footer {
