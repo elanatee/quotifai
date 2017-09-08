@@ -1,7 +1,16 @@
 beautifulsoup4==4.4.1
 clarifai==2.0.10
+click==6.6
+configparser==3.5.0
+decorator==4.0.10
 Flask==0.11.1
+Flask-WTF==0.14.2
+future==0.15.2
+itsdangerous==0.24
 Jinja2==2.8
+MarkupSafe==0.23
 requests==2.11.1
+six==1.10.0
 validators==0.11.1
 Werkzeug==0.11.11
+WTForms==2.1
